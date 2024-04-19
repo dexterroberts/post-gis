@@ -11,3 +11,9 @@ WHERE statefp = '55'
 SELECT id, st_centroid(geom) AS geom
 FROM cb_2018_us_county_500k
 WHERE statefp = '55'
+
+-- Create and name a view in QGIS
+CREATE OR REPLACE view wi_centroids AS
+SELECT id, st_centroid(geom) AS geom
+FROM cb_2018_us_county_500k
+WHERE statefp = '55'
