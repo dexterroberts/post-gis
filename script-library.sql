@@ -17,3 +17,10 @@ CREATE OR REPLACE view wi_centroids AS
 SELECT id, st_centroid(geom) AS geom
 FROM cb_2018_us_county_500k
 WHERE statefp = '55'
+
+-- Joining tables without a geometry
+SELECT pc.geom, pc.postal_code,
+COUNT(customers.customer_id)
+FROM postal_codes pc
+JOIN customers USING (postal_code)
+GROUP BY pc.postal_code
