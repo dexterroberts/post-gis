@@ -1,7 +1,7 @@
 -- Created by: dexterroberts
 -- Date Created: 4/19/24
 -- Last Modified: 4/19/24
--- Description: A library of spatial SQL scripts tailored for GIS data analysis, data management and processing.
+-- Description: A library of spatial SQL scripts and commands tailored for GIS data analysis, data management and processing.
 
 -- Select counties where the statefp (Wisconsin) is equal to '55'
 SELECT * FROM cb_2019_us_county_500k
