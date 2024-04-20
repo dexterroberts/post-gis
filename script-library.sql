@@ -26,4 +26,4 @@ JOIN customers USING (postal_code)
 GROUP BY pc.postal_code
 
 -- Return spatial reference data in PostGIS / QGIS
-SELECT * FROM spatial_ref_sys WHERE srid = ’4326’
+SELECT * FROM spatial_ref_sys WHERE srid = 4326
