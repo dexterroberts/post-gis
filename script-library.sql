@@ -43,3 +43,8 @@ AUTHORITY["ESRI","106726"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],
 UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["ESRI","104726"]]'
 );
 
+-- Loading data with ogr2ogr
+ogr2ogr \
+-f PostgreSQL PG:"host=localhost port=25432 user=docker password=docker \
+dbname=gis" /Users/matt/Documents/spatial-sql-book/nyc_taxi_yellow_0616-07.parquet \
+-nln nyc_taxi_yellow_0616 -lco GEOMETRY_NAME=geom
