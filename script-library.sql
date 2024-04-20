@@ -47,4 +47,11 @@ UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["ESRI","104
 ogr2ogr \
 -f PostgreSQL PG:"host=localhost port=25432 user=docker password=docker \
 dbname=gis" /Users/matt/Documents/spatial-sql-book/nyc_taxi_yellow_0616-07.parquet \
--nln nyc_taxi_yellow_0616 -lco GEOMETRY_NAME=geom
+-nln nyc_taxi_yellow_0616-lco GEOMETRY_NAME=geom
+
+    -- explained:
+-- ogr2ogr \ -- -f is the file type flag and PostgreSQL is the file type we are transforming to
+-- -f PostgreSQL PG:"host=localhost port=25432 user=docker password=docker \ -- Details about our database
+-- dbname=gis" /Users/matt/Documents/spatial-sql-book/nyc_taxi_yellow_0616-07.parquet \ -- Absolute path to our file (yours will be different)
+-- nln nyc_taxi_yellow_0616 Flag for "new layer name" or the name of the table we will create
+-- lco GEOMETRY_NAME=geom -- Layer creation option to add the data type GEOMETRY in a column called geom
