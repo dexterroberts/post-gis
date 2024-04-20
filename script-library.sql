@@ -27,3 +27,19 @@ GROUP BY pc.postal_code
 
 -- Return spatial reference data in PostGIS / QGIS
 SELECT * FROM spatial_ref_sys WHERE srid = 4326
+
+-- Add a new projection to QGIS (step 1: go to https://epsg.io or https://epsg.io/104726)
+INSERT INTO
+spatial_ref_sys (srid, auth_name, auth_srid, proj4text, srtext)
+VALUES
+(
+104726,
+'ESRI',
+104726,
+'+proj=longlat +a=6378418.941 +rf=298.257222100883 +no_defs +type=crs',
+'GEOGCS["GCS_NAD_1983_HARN_Adj_MN_Hennepin",DATUM["D_NAD_1983_HARN_Adj_MN_Hennepin",
+SPHEROID["S_GRS_1980_Adj_MN_Hennepin",6378418.941,298.257222100883,AUTHORITY["ESRI","107726"]],
+AUTHORITY["ESRI","106726"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],
+UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["ESRI","104726"]]'
+);
+
